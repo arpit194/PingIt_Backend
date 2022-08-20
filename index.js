@@ -40,7 +40,7 @@ const server = app.listen(process.env.PORT, () => {
 
 const io = socket(server, {
   cors: {
-    origin: ["http://localhost:3000", "https://arpit194.github.io/PingIt"],
+    // origin: ["http://localhost:3000", "https://arpit194.github.io/PingIt"],
     credentials: true,
   },
 });
