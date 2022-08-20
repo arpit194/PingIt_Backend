@@ -10,7 +10,11 @@ const app = express();
 
 require("dotenv").config();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://arpit194.github.io"],
+  })
+);
 
 app.use(express.json());
 
@@ -40,7 +44,7 @@ const server = app.listen(process.env.PORT, () => {
 
 const io = socket(server, {
   cors: {
-    // origin: ["http://localhost:3000", "https://arpit194.github.io/PingIt"],
+    origin: ["http://localhost:3000", "https://arpit194.github.io"],
     credentials: true,
   },
 });
